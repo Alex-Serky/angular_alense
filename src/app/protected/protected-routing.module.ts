@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+// Ajouter l’importation suivante :
+import { PlanningComponent } from './planning/planning/planning.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'planning', component: PlanningComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -3,7 +3,9 @@
         "common",
         "importer",
         "module",
+        "name",
         "plutôt",
-        "profil"
+        "profil",
+        "prop"
     ]
 }
