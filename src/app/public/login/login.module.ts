@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
-// Remplacer l’importation du CommonModule par cette ligne :
-//import { CommonModule } from '@angular/common';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { LoginComponent } from './login/login.component';
+// Importez ce module :
+import { LoginRoutingModule } from './login/login-routing.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [LoginComponent],
   imports: [
-    //CommonModule,
-    SharedModule
+    SharedModule,
+    LoginRoutingModule // Et ajouter-le !
   ]
 })
 export class LoginModule { }
