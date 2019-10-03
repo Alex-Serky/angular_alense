@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
-// Remplacer l’importation du CommonModule par cette ligne :
-//import { CommonModule } from '@angular/common';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ParametersComponent } from './parameters/parameters.component';
+import { ParametersRoutingModule } from './parameters/parameters-routing.module';
 
 @NgModule({
   declarations: [ParametersComponent],
   imports: [
-    // CommonModule,
-    SharedModule
+    SharedModule,
+    ParametersRoutingModule
   ]
 })
 export class ParametersModule { }

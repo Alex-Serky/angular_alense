@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProfilComponent } from './profil/profil.component';
-// Remplacer l’importation du CommonModule par cette ligne :
-// mport { CommonModule } from '@angular/common';
+import { ProfilRoutingModule } from './profil/profil-routing.module';
 
 @NgModule({
   declarations: [ProfilComponent],
   imports: [
-   // CommonModule,
-   SharedModule
+    SharedModule,
+    ProfilRoutingModule
   ]
 })
 export class ProfilModule { }

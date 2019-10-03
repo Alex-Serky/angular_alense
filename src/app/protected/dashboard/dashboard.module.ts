@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
-// Remplacer l’importation du CommonModule par cette ligne :
-//import { CommonModule } from '@angular/common';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardRoutingModule } from './dashboard/dashboard-routing.module';
 
 @NgModule({
   declarations: [DashboardComponent],
   imports: [
-    //CommonModule,
-    SharedModule
+    SharedModule,
+    DashboardRoutingModule
   ]
 })
 export class DashboardModule { }
