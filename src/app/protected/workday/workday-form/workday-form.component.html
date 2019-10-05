@@ -1,0 +1,28 @@
+<!-- <form [formGroup]="workdayForm">
+    <al-workday-form-date [dueDate]="dueDate"></al-workday-form-date>
+    <al-workday-form-tasks></al-workday-form-tasks>
+    <al-workday-form-notes></al-workday-form-notes>
+<!--
+    <div class="text-right">
+        <button (click)="submit()"
+        type="submit"
+        class="btn btn-success btn-lg"
+        [disabled]="workdayForm.invalid">
+        Sauvegarder
+        </button>
+    </div> 
+
+    {# {{ workdayForm.value | json }} #}
+</form> -->
+
+<div class="row mb-5">
+    <div class="col-md-6 mx-auto">
+        <div class="form-inline">
+            <div class="form-group">
+                <label class="mr-3">Date:</label>
+                <input bsDatepicker [formControl]="dueDate" [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }" type="text"
+                class="form-control form-control-sm align-middle" />
+            </div>
+        </div>
+    </div>
+</div>

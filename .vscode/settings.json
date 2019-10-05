@@ -1,13 +1,21 @@
 {
     "cSpell.words": [
+        "accueil",
+        "chronos",
         "common",
         "component",
+        "connexion",
+        "console",
+        "datepicker",
         "importer",
         "module",
         "name",
+        "notes",
+        "password",
         "plutôt",
         "profil",
         "prop",
-        "sidenav"
+        "sidenav",
+        "workay"
     ]
 }

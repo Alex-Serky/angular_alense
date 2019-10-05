@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RegisterComponent } from './register/register.component';
-// Remplacer l’importation du CommonModule par cette ligne :
-//import { CommonModule } from '@angular/common';
+import { RegisterFormComponent } from './register-form/register-form.component';
+import { RegisterRoutingModule } from './register/register-routing.module';
 
 @NgModule({
-  declarations: [RegisterComponent],
+  declarations: [RegisterComponent, RegisterFormComponent],
   imports: [
-    //CommonModule,
-    SharedModule
+    SharedModule,
+    RegisterRoutingModule
   ]
 })
 export class RegisterModule { }
