@@ -1,7 +1,9 @@
-<form novalidate
+<form
+    novalidate
     [formGroup]="registerForm"
     (ngSubmit)="submit()"
-    class="card-body">
+    class="card-body"
+    >
 
     <!-- Le champ du nom de l‘utilisateur -->
     <div class="form-group">
@@ -61,8 +63,12 @@
     </div>
     <!-- A ajouter : le bouton pour soumettre le formulaire. -->
     <p class="text-center py-3">
-        <button type="submit" class="btn"
-            [disabled]="!registerForm.valid">
+        <button
+            type="submit"
+            class="btn"
+            [disabled]="!registerForm.valid"
+            [ngClass]=
+            "{'btn-success':registerForm.valid,'btn-default':!registerForm.valid}">
             Inscription
         </button>
     </p>
