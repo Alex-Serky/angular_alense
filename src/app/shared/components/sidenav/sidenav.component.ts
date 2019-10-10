@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from './../../models/user';
+import { AuthService } from './../../../core/services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'al-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss']
 })
-export class SidenavComponent implements OnInit {
+export class SidenavComponent implements OnInit, OnDestroy {
 
   public prefix = 'app';
   public dashboardPath = `${this.prefix}/dashboard`;
@@ -14,10 +17,19 @@ export class SidenavComponent implements OnInit {
   public workdayPath = `${this.prefix}/workday`;
   public profilPath = `${this.prefix}/profil`;
   public parametersPath = `${this.prefix}/parameters`;
+  public subscription: Subscription;
+  public user: User;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private authService: AuthService) { }
 
   ngOnInit() {
+    this.subscription = this.authService.user$.subscribe(user => this.user = user);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   public navigate(page: string): void {

@@ -1,7 +1,7 @@
 <div [formGroup]="workdayForm">
     <div formArrayName="tasks">
         <al-workday-form-tasks-item
-            *ngFor="let task of tasks.controls
+            *ngFor="let task of tasks.controls;
             index as i;
             first as isFirst;
             last as isLast;"

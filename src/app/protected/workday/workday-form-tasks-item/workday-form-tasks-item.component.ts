@@ -21,6 +21,6 @@ export class WorkdayFormTasksItemComponent implements OnInit {
   }
 
   removeTask(index: number) {
-    this.removeTask.emit(index);
+    this.removedTask.emit(index);
   }
 }
