@@ -6,13 +6,14 @@ import { Component, Input, OnChanges, SimpleChange, Output, EventEmitter } from 
   styles: []
 })
 export class PlanningWorkdayItemComponent implements OnChanges {
+
   @Input() dueDate: string;
   @Input() doneTasks: number | string;
   @Input() remainingTasks: number | string;
-
   @Output() workdayRemoved = new EventEmitter<string>();
 
   ngOnChanges(changes: { [propKey: string]: SimpleChange }) {
+    // tslint:disable-next-line: forin
     for (const propName in changes) {
       this.update(propName, changes[propName].currentValue);
     }
@@ -45,15 +46,4 @@ export class PlanningWorkdayItemComponent implements OnChanges {
     this.workdayRemoved.emit(dueDate);
   }
 
-  // private currentWorkday;
-
-  // get workday() { return this.currentWorkday; }
-
-  // @Input()
-  // set workday(workday) {
-  //   this.currentWorkday = workday || {};
-
-  //   if ('Lundi' === workday.dueDate) {
-  //     this.currentWorkday.dueDate += ' (Aujourd\'hui)';
-  //   }
 }

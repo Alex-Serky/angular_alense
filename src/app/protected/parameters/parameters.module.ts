@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { ParametersComponent } from './parameters/parameters.component';
 import { ParametersRoutingModule } from './parameters/parameters-routing.module';
+import { ParametersComponent } from './parameters/parameters.component';
 
 @NgModule({
   declarations: [ParametersComponent],

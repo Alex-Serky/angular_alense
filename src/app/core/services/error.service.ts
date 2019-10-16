@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ToastrService } from './toastr.service';
 import { throwError } from 'rxjs';
+import { ToastrService } from './toastr.service';
 
 @Injectable({
   providedIn: 'root'

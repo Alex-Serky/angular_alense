@@ -16,8 +16,8 @@ export class ProtectedComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscription =
-      this.layoutService.isSidenavCollapsed$.subscribe(
-        isSidenavCollapsed => this.isSidenavCollapsed = isSidenavCollapsed
+      this.layoutService.isSidenavCollapsed$
+        .subscribe(isSidenavCollapsed => this.isSidenavCollapsed = isSidenavCollapsed
       );
   }
 

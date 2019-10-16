@@ -1,12 +1,16 @@
 <nav class="navbar navbar-expand navbar-light bg-light">
     <!-- Code du menu “hamburger” à ajouter : -->
-    <a (click)="toggleSidenav()" class="nav-link text-left">
+    <a *ngIf="user"
+        (click)="toggleSidenav()"
+        class="nav-link text-left">
         <i class="material-icons align-middle">menu</i>
     </a>
     <div class="container">
         <a class="navbar-brand">Alense List</a>
 
-        <div *ngIf="user" class="collapse navbar-collapse">
+    <!-- Cas où l'utilisateur est connecté -->
+        <div *ngIf="user"
+            class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                 <a class="nav-link">{{user?.email}}</a>
@@ -19,6 +23,7 @@
             </ul>
         </div>
 
+    <!-- Cas où l'utilisateur n'est pas connecté -->
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
                 <li [class.active]="isActive(homePath)"

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RegisterComponent } from './register/register.component';
-import { RegisterFormComponent } from './register-form/register-form.component';
 import { RegisterRoutingModule } from './register/register-routing.module';
+import { RegisterFormComponent } from './register-form/register-form.component';
 
 @NgModule({
   declarations: [RegisterComponent, RegisterFormComponent],

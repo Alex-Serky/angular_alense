@@ -31,9 +31,7 @@ export class PlanningWorkdayListComponent implements OnInit {
 
   // Ajoutez notre gestionnaire d’événement :
   onWorkdayRemoved(dueDate: string) {
-    this.workdays = this.workdays.filter(workday =>
-      !dueDate.includes(workday.dueDate)
-    );
+    this.workdays = this.workdays.filter(workday => !dueDate.includes(workday.dueDate));
     this.workdays$ = of(this.workdays);
   }
 

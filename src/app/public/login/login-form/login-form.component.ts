@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from './../../../core/services/auth.service';
 
 @Component({
   selector: 'al-login-form',
@@ -10,15 +11,18 @@ import { Router } from '@angular/router';
 export class LoginFormComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) { }
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private authService: AuthService) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      'email': ['', [
+      email: ['', [
         Validators.required,
         Validators.email
       ]],
-      'password': ['', [
+      password: ['', [
         Validators.minLength(6),
         Validators.maxLength(20),
         Validators.required
@@ -30,8 +34,11 @@ export class LoginFormComponent implements OnInit {
   get password() { return this.loginForm.get('password'); }
 
   submit(): void {
-    console.log(this.email.value);
-    console.log(this.password.value);
-    this.router.navigate(['/app/dashboard']);
+    this.authService
+      .login(this.email.value, this.password.value)
+      .subscribe(
+        _ => this.router.navigate(['/app/dashboard']),
+        _ => this.loginForm.reset()
+      );
   }
 }

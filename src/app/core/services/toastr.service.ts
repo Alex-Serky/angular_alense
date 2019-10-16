@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, timer } from 'rxjs';
-import { Toastr } from 'src/app/shared/models/toastr';
 import { take } from 'rxjs/operators';
+import { Toastr } from 'src/app/shared/models/toastr';
 
 @Injectable({
   providedIn: 'root'

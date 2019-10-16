@@ -35,6 +35,7 @@ export class WorkdayFormComponent implements OnInit {
   }
 
   submit(): void {
+    // tslint:disable-next-line:no-console
     console.info(this.workdayForm.value);
   }
 

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { PublicRoutingModule } from './public-routing.module';
 import { HomeModule } from './home/home.module';
-import { RegisterModule } from './register/register.module';
+// import { RegisterModule } from './register/register.module';
 
 @NgModule({
   declarations: [],
@@ -10,7 +10,7 @@ import { RegisterModule } from './register/register.module';
     SharedModule, // Importer le SharedModule plutôt que le CommonModule
     PublicRoutingModule,
     HomeModule,
-    RegisterModule
+    // RegisterModule
   ]
 })
 export class PublicModule { }
