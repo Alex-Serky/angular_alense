@@ -1,10 +1,10 @@
 <form
     novalidate
-    class="card-body"
-    [formGroup]="loginForm"
-    (ngSubmit)="submit()">
+[formGroup]="loginForm"
+(ngSubmit)="submit()"
+    class="card-body">
 
-    <!-- Champ de l’adresse email -->
+        <!-- Champ de l’adresse email -->
     <div class="form-group">
         <label for="email">Email</label>
         <input
@@ -27,7 +27,7 @@
         </small>
     </div>
 
-    <!-- Champ du mot de passe -->
+        <!-- Champ du mot de passe -->
     <div class="form-group">
         <label for="password">Password</label>
         <input

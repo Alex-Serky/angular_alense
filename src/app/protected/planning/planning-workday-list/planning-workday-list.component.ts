@@ -20,15 +20,10 @@ export class PlanningWorkdayListComponent implements OnInit {
       { dueDate: 'Mardi', doneTasks: 0, remainingTasks: 2 },
       { dueDate: 'Mercredi', doneTasks: 0, remainingTasks: 1 }
     ];
-    this.workdays$ = of(this.workdays).pipe(delay(1000));
-    // this.workdays$ = of([
-    //   // Je passe remainingTasks à 0 mon composant fils :
-    //   { dueDate: 'Lundi', doneTasks: 1, remainingTasks: 0 },
-    //   { dueDate: 'Mardi', doneTasks: 0, remainingTasks: 2 },
-    //   { dueDate: 'Mercredi', doneTasks: 0, remainingTasks: 1 }
-    // ]).pipe(delay(1000));
-  }
 
+    this.workdays$ = of(this.workdays).pipe(delay(1000));
+
+  }
   // Ajoutez notre gestionnaire d’événement :
   onWorkdayRemoved(dueDate: string) {
     this.workdays = this.workdays.filter(workday => !dueDate.includes(workday.dueDate));

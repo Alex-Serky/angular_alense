@@ -16,7 +16,7 @@ export class ParametersComponent implements OnInit {
 
   constructor(
     public fb: FormBuilder,
-    public authService: AuthService) { }
+    private authService: AuthService) { }
 
   ngOnInit() {
     this.parametersForm = this.fb.group({

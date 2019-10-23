@@ -10,7 +10,7 @@
                 [src]="user.avatar"
                 alt="sidenav avatar">
         </div>
-        <div class="card-header">Menu</div>
+        <div class="card-header">Bonjour, {{ user?.name }}</div>
         <ul class="list-group list-group-flush">
             <li (click)="navigate(dashboardPath)"
                 [class.list-group-item-success]="isActive(dashboardPath)"
@@ -35,7 +35,8 @@
                 <i class="material-icons align-bottom mr-1">person</i>
                 Profil
             </li>
-            <li (click)="navigate(parametersPath)"
+            <li *ngIf="user.hasRole('EMPLOYEE')"
+                (click)="navigate(parametersPath)"
                 [class.list-group-item-success]="isActive(parametersPath)"
                 class="list-group-item">
                 <i class="material-icons align-bottom mr-1">settings</i>

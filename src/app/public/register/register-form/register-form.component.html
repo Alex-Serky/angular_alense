@@ -2,13 +2,12 @@
     novalidate
     [formGroup]="registerForm"
     (ngSubmit)="submit()"
-    class="card-body"
-    >
+    class="card-body">
 
     <!-- Le champ du nom de l‘utilisateur -->
     <div class="form-group">
         <label for="name">Name</label>
-        <input id="name" type="name" formControlName="name" class="form-control" placeholder="Votre peusdonyme"
+        <input id="name" type="name" formControlName="name" class="form-control" placeholder="Votre pseudonyme"
         autocorrect="off" autocomplete="off" />
         <!-- On ajoute tous les messages d’erreurs potentiels : -->
         <small *ngIf="name.errors && name.dirty" class="form-text text-muted">
@@ -41,6 +40,7 @@
             </span>
         </small>
     </div>
+
     <!-- A ajouter : le champ du mot de passe. -->
     <div class="form-group">
         <label for="password">Password</label>
@@ -61,6 +61,7 @@
             </span>
         </small>
     </div>
+
     <!-- A ajouter : le bouton pour soumettre le formulaire. -->
     <p class="text-center py-3">
         <button

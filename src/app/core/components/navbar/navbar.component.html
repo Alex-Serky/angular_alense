@@ -8,27 +8,33 @@
     <div class="container">
         <a class="navbar-brand">Alense List</a>
 
-    <!-- Cas où l'utilisateur est connecté -->
+        <!-- Cas où l'utilisateur est connecté -->
         <div *ngIf="user"
             class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                <a class="nav-link">{{user?.email}}</a>
+                    <a class="nav-link">
+                        {{ user?.email }}
+                    </a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                <a class="nav-link" (click)="logout()">Déconnexion</a>
+                    <a class="nav-link" (click)="logout()">
+                        Déconnexion
+                    </a>
                 </li>
             </ul>
         </div>
 
-    <!-- Cas où l'utilisateur n'est pas connecté -->
+        <!-- Cas où l'utilisateur n'est pas connecté -->
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
                 <li [class.active]="isActive(homePath)"
                     class="nav-item">
-                    <a (click)="navigate(homePath)" class="nav-link">Accueil</a>
+                    <a (click)="navigate(homePath)" class="nav-link">
+                        Accueil
+                    </a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -38,9 +44,12 @@
                 </li>
                 <li class="nav-item"
                     [class.active]="isActive(registerPath)">
-                    <a (click)="navigate(registerPath)" class="nav-link">Inscription</a>
+                    <a (click)="navigate(registerPath)" class="nav-link">
+                        Inscription
+                    </a>
                 </li>
             </ul>
         </div>
+
     </div>
 </nav>

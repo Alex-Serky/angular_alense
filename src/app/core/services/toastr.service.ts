@@ -7,8 +7,8 @@ import { Toastr } from 'src/app/shared/models/toastr';
   providedIn: 'root'
 })
 export class ToastrService {
-  private toastr: BehaviorSubject<Toastr | null> = new BehaviorSubject(null);
-  public readonly toastr$: Observable<Toastr | null> = this.toastr.asObservable();
+  private toastr: BehaviorSubject<Toastr|null> = new BehaviorSubject(null);
+  public readonly toastr$: Observable<Toastr|null> = this.toastr.asObservable();
 
   constructor() { }
 

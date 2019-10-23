@@ -5,7 +5,10 @@ import { RegisterRoutingModule } from './register/register-routing.module';
 import { RegisterFormComponent } from './register-form/register-form.component';
 
 @NgModule({
-  declarations: [RegisterComponent, RegisterFormComponent],
+  declarations: [
+    RegisterComponent,
+    RegisterFormComponent
+  ],
   imports: [
     SharedModule,
     RegisterRoutingModule

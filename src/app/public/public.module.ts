@@ -10,7 +10,7 @@ import { HomeModule } from './home/home.module';
     SharedModule, // Importer le SharedModule plutôt que le CommonModule
     PublicRoutingModule,
     HomeModule,
-    // RegisterModule
+  //  RegisterModule
   ]
 })
 export class PublicModule { }

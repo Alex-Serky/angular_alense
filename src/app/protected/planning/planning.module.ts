@@ -6,7 +6,11 @@ import { PlanningWorkdayListComponent } from './planning-workday-list/planning-w
 import { PlanningWorkdayItemComponent } from './planning-workday-item/planning-workday-item.component';
 
 @NgModule({
-  declarations: [PlanningComponent, PlanningWorkdayListComponent, PlanningWorkdayItemComponent],
+  declarations: [
+    PlanningComponent,
+    PlanningWorkdayListComponent,
+    PlanningWorkdayItemComponent
+  ],
   imports: [
     SharedModule,
     PlanningRoutingModule

@@ -27,7 +27,7 @@ export class PlanningWorkdayItemComponent implements OnChanges {
         break;
       }
       case 'doneTasks': {
-        if (0 === propValue) { this.doneTasks = 'Aucune tâche terminé.'; }
+        if (0 === propValue) { this.doneTasks = 'Aucune tâche terminée.'; }
         break;
       }
       case 'remainingTasks': {

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { LayoutService } from './../core/services/layout.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'al-protected',
@@ -15,10 +15,8 @@ export class ProtectedComponent implements OnInit, OnDestroy {
   constructor(private layoutService: LayoutService) { }
 
   ngOnInit() {
-    this.subscription =
-      this.layoutService.isSidenavCollapsed$
-        .subscribe(isSidenavCollapsed => this.isSidenavCollapsed = isSidenavCollapsed
-      );
+    this.subscription = this.layoutService.isSidenavCollapsed$
+        .subscribe(isSidenavCollapsed => this.isSidenavCollapsed = isSidenavCollapsed );
   }
 
   ngOnDestroy() {

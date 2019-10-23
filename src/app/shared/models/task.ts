@@ -13,7 +13,7 @@ export class Task {
     } = {}) {
         this.completed = options.completed || false;
         this.done = options.done || 0;
-        this.title = options.title || ``;
+        this.title = options.title || '';
         this.todo = options.todo || 1;
     }
 }
