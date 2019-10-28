@@ -8,27 +8,8 @@
     <div class="container">
         <a class="navbar-brand">Alense List</a>
 
-        <!-- Cas où l'utilisateur est connecté -->
-        <div *ngIf="user"
-            class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link">
-                        {{ user?.email }}
-                    </a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" (click)="logout()">
-                        Déconnexion
-                    </a>
-                </li>
-            </ul>
-        </div>
-
         <!-- Cas où l'utilisateur n'est pas connecté -->
-        <div class="collapse navbar-collapse">
+        <div *ngIf="!user" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
                 <li [class.active]="isActive(homePath)"
                     class="nav-item">
@@ -40,13 +21,31 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"
                     [class.active]="isActive(loginPath)">
-                    <a (click)="navigate(loginPath)"         class="nav-link">Connexion</a>
+                    <a *ngIf="!user" (click)="navigate(loginPath)" class="nav-link">Connexion</a>
                 </li>
                 <li class="nav-item"
                     [class.active]="isActive(registerPath)">
-                    <a (click)="navigate(registerPath)" class="nav-link">
+                    <a *ngIf="!user" (click)="navigate(registerPath)" class="nav-link">
                         Inscription
                     </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Cas où l'utilisateur est connecté -->
+        <div *ngIf="user" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link">
+                        {{ user?.email }}
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                <a class="nav-link" (click)="logout()">
+                    Déconnexion
+                </a>
                 </li>
             </ul>
         </div>

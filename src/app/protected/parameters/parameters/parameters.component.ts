@@ -25,7 +25,7 @@ export class ParametersComponent implements OnInit {
   }
 
   onSubmit() {
-    const user: User = this.authService.currentUser;
+    const user: User = this.authService.currentUser; // On récupère la dernière valeur de l'utilisateur
     user.pomodoroDuration = this.parametersForm.get('pomodoro').value * 60;
     this.authService.updateUserState(user).subscribe();
   }

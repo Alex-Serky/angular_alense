@@ -31,7 +31,6 @@ export class AuthService {
       `${environment.firebase.auth.baseURL}/signupNewUser?key=${environment.firebase.apiKey}`;
 
     const data = {
-      // name: name,
       email: email,
       password: password,
       returnSecureToken: true
@@ -57,7 +56,7 @@ export class AuthService {
         return this.usersService.save(user, jwt);
       }),
       tap(user => this.user.next(user)),
-      tap(_ => this.logoutTimer(3600)),
+      tap(_ => this.logoutTimer(3600)), //On déclenche la minuterie.
       catchError(error => this.errorService.handleError(error)),
       finalize(() => this.loaderService.setLoading(false))
     );
@@ -85,7 +84,7 @@ export class AuthService {
         return this.usersService.get(userId, jwt);
       }),
       tap(user => this.user.next(user)),
-      tap(_ => this.logoutTimer(3600)),
+      tap(_ => this.logoutTimer(3600)), //On déclenche la minuterie.
       catchError(error => this.errorService.handleError(error)),
       finalize(() => this.loaderService.setLoading(false))
     );
@@ -117,6 +116,7 @@ export class AuthService {
     return this.user.getValue();
   }
 
+  // La méthode qui déclenche cette fameuse minuterie.
   private logoutTimer(expirationTime: number): void {
     of(true).pipe(
       delay(expirationTime * 1000)
